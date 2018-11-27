@@ -5,18 +5,31 @@ const Pizza = require('./pizza');
 module.exports = (Sequelize, config) => {
     const sequelize = new Sequelize('sequelize','root','55911955',config);
 
+    sequelize.authenticate().then(() => {
+		console.log('Success initialization');
+	}).catch((err) => {
+		console.log(`Error connect ${err}`);
+    });
+
     const turtles = Turtle(Sequelize, sequelize);
     const weapons = Weapon(Sequelize, sequelize);
     const pizzas = Pizza(Sequelize, sequelize);
 
-    synchronizeDB([turtles,weapons,pizzas]);
-
     // TODO: создание связей между таблицами
+	turtles.belongsTo(pizzas, {
+		foreignKey: 'firstFavouritePizzaId',
+		as: 'firstFavouritePizza'
+	});
 
-    weapons.belongsTo(turtles, {as:'weapon'});
-    turtles.hasOne(pizzas,{as:'FirstFavoritePizza',foreignKey: 'firstFavoritePizzaId'});
-    turtles.hasOne(pizzas,{as:'secondFavoritePizza',foreignKey: 'secondFavoritePizzaId'});
-    pizzas.belongsTo(turtles);
+	turtles.belongsTo(pizzas, {
+		foreignKey: 'secondFavouritePizzaId',
+		as: 'secondFavouritePizza'
+	});
+
+	turtles.belongsTo(weapons, {
+		foreignKey: 'weaponId',
+		as: 'weapon'
+	});
 
     return {
         turtles,
@@ -27,9 +40,3 @@ module.exports = (Sequelize, config) => {
         Sequelize: Sequelize,
     };
 };
-
-function synchronizeDB(tables){
-    tables.forEach((table) => {
-        table.sync({force:true});
-    })
-}

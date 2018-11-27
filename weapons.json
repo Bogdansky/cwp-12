@@ -1,18 +1,18 @@
 [
   {
     "name":"katana",
-    "dps":2
+    "dps":120
   },
   {
     "name":"sai",
-    "dps":3
+    "dps":90
   },
   {
     "name":"nunchuck",
-    "dps":4
+    "dps":400
   },
   {
     "name":"bo",
-    "dps":1
+    "dps":100
   }
 ]

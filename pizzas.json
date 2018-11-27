@@ -2,26 +2,26 @@
   {
     "name":"Hunter",
     "description":"It's spicy pizza. Before you try this pizza you have to think twice.",
-    "calories": 500.00
+    "calories": 2500.00
   },
   {
     "name":"4-cheese",
     "description":"I hope you understand what it means. Pizza incorporates four types of cheese. They are mozzarella,emmental,parmesan and gorgonzola.",
-    "calories": 600.00
+    "calories": 3001.00
   },
   {
     "name":"Hawaiian",
     "description":"If you want something exotic, then this pizza is for you. It's consist of pineapple and chicken.",
-    "calories": 444.66
+    "calories": 1200.66
   },
   {
-    "name":"",
-    "description":"",
-    "calories": 782.00
+    "name":"pepperoni",
+    "description":"It's kind of pizza with tasty sausage what is also called peperoni.",
+    "calories": 2100.68
   },
   {
     "name":"Vegetarian",
     "description":"Tasty pizza without meat. But it's not vegan so you can enjoy delicious cheese with mushrooms.",
-    "calories":210.68
+    "calories":782.00
   }
 ]
