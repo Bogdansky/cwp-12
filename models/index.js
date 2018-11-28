@@ -3,7 +3,7 @@ const Weapon = require('./weapon');
 const Pizza = require('./pizza');
 
 module.exports = (Sequelize, config) => {
-    const sequelize = new Sequelize('sequelize','root','55911955',config);
+    const sequelize = new Sequelize('sequelize','root','5591',config);
 
     sequelize.authenticate().then(() => {
 		console.log('Success initialization');
@@ -17,13 +17,13 @@ module.exports = (Sequelize, config) => {
 
     // TODO: создание связей между таблицами
 	turtles.belongsTo(pizzas, {
-		foreignKey: 'firstFavouritePizzaId',
-		as: 'firstFavouritePizza'
+		foreignKey: 'firstFavoritePizzaId',
+		as: 'firstFavoritePizza'
 	});
 
 	turtles.belongsTo(pizzas, {
-		foreignKey: 'secondFavouritePizzaId',
-		as: 'secondFavouritePizza'
+		foreignKey: 'secondFavoritePizzaId',
+		as: 'secondFavoritePizza'
 	});
 
 	turtles.belongsTo(weapons, {
