@@ -3,7 +3,7 @@ const Weapon = require('./weapon');
 const Pizza = require('./pizza');
 
 module.exports = (Sequelize, config) => {
-    const sequelize = new Sequelize('sequelize','root','5591',config);
+    const sequelize = new Sequelize('sequelize','root',[there is password],config);
 
     sequelize.authenticate().then(() => {
 		console.log('Success initialization');
